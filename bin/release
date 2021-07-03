@@ -1,4 +1,2 @@
 #!/bin/sh
 echo "--- {}"
-config_vars:
-PATH: $PATH:/app/vendor/ffmpeg
