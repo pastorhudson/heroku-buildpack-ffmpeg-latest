@@ -46,8 +46,6 @@ echo "Unpacking the archive" | output
 
 tar xJf "./$FFMPEG_ARCHIVE_NAME" --strip-components=1
 
-cp ./ffmpeg /app/vendor/bin
-
 if [ "$?" != "0" ]; then
   echo "Failed to unpack" | output && exit 1
 fi
@@ -57,6 +55,8 @@ rm $FFMPEG_ARCHIVE_NAME
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
 echo $PROFILE_PATH
 mkdir -p $(dirname $PROFILE_PATH)
+cp ./ffmpeg /app/vendor/bin
+
 echo 'export PATH="$PATH:${HOME}/vendor/ffmpeg"' >> $PROFILE_PATH
 echo $PATH
 
