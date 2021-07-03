@@ -46,6 +46,8 @@ echo "Unpacking the archive" | output
 
 tar xJf "./$FFMPEG_ARCHIVE_NAME" --strip-components=1
 
+cp ./ffmpeg /app/vendor/bin
+
 if [ "$?" != "0" ]; then
   echo "Failed to unpack" | output && exit 1
 fi
